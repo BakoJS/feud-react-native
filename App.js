@@ -1,23 +1,31 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, SafeAreaView, View } from 'react-native';
+import {
+  Container,
+  Content,
+  Header,
+  Form,
+  Input,
+  Item,
+  Button,
+  Label
+} from 'native-base';
+import firebase from 'firebase';
+
+// Initialize Firebase
+import fbConfig from './fbConfig';
+firebase.initializeApp(fbConfig);
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+      <Container>
+        <SafeAreaView>
+          <View>
+            <Text>Hello World</Text>
+          </View>
+        </SafeAreaView>
+      </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
